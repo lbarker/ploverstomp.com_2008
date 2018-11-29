@@ -1,0 +1,408 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>
+			PloverStomp.com
+		</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css" />
+		<style type="text/css" media="all">
+/*<![CDATA[*/
+		@import "css/global.css";
+		/*]]>*/
+		</style>
+		<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js" type="text/javascript">
+</script>
+		<script type="text/javascript">
+//<![CDATA[
+		function MM_swapImgRestore() { //v3.0
+		var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+		}
+		function MM_preloadImages() { //v3.0
+		var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+		var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+		if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+		}
+
+		function MM_findObj(n, d) { //v4.01
+		var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+		d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+		if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+		for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+		if(!x && d.getElementById) x=d.getElementById(n); return x;
+		}
+
+		function MM_swapImage() { //v3.0
+		var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+		if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+		}
+		//]]>
+		</script>
+		<style type="text/css">
+/*<![CDATA[*/
+
+		#scroll {
+		background-color:#FFF;
+		position:relative;
+		height:520px;
+		overflow:hidden;
+		width:900px;
+		padding:10px;
+
+		}
+
+		#tools {
+		width:9999em;
+		position:absolute; top:115px;
+		height:420px;
+		}
+
+		.tool {
+		float:left;
+		width:850px;
+		margin:0px 40px 0px 20px;
+		height:420px;
+		background-repeat:no-repeat;
+		background-position:0 -40px;
+		}
+
+		.details {
+		background-color:#fff;
+		color:#666;
+		float:left;
+		font-size:20px;
+		margin:270px 0 0 0;
+		padding:10px 60px;
+		width:525px;
+		}
+		#thumbs {
+		background: url(images/css_elements/info_nav.jpg) no-repeat -0px -100px;
+		height:100px;
+		position:absolute;
+		top:-10px;
+		width:900px;
+		left:0px;
+		}
+
+		.t a {
+		background:transparent url(images/css_elements/info_nav.jpg) no-repeat scroll;
+		margin-left:0px;
+		display:block;
+		width:149px;
+		float:left;
+		height:100px;
+		line-height:100px;
+		cursor:pointer; 
+		z-index:2
+		}
+
+		.t a.active {
+		cursor:default !important;
+		}
+
+		.navi { 
+		margin-left:4px;
+		_margin-left:4px;
+		}
+
+
+		/* CSS sprite for the navigation */
+		#t0           {margin-left:0px; _margin-left:0px;}
+		#t0.active { background-position:-0px 0 !important; }
+		#t0:hover  { background-position:-0px -200px; }
+		#t0:active { background-position:-0px -300px; }
+
+		#t1         { background-position:-150px -100px; }
+		#t1:hover   { background-position:-150px -200px; }
+		#t1:active  { background-position:-150px -300px; }
+		#t1.active  { background-position:-150px 0 !important; }
+
+		#t2         { background-position:-300px -100px; }
+		#t2:hover   { background-position:-300px -200px; }
+		#t2:active  { background-position:-300px -300px; }
+		#t2.active  { background-position:-300px 0 !important; }
+
+		#t3         { background-position:-450px -100px; }
+		#t3:hover   { background-position:-450px -200px; }
+		#t3:active  { background-position:-450px -300px; }
+		#t3.active  { background-position:-450px 0 !important; }
+
+		#t4         { background-position:-600px -100px; }
+		#t4:hover   { background-position:-600px -200px; }
+		#t4:active  { background-position:-600px -300px; }
+		#t4.active  { background-position:-600px 0 !important; }
+
+		#t5         { background-position:-750px -100px; }
+		#t5:hover   { background-position:-750px -200px; }
+		#t5:active  { background-position:-750px -300px; }
+		#t5.active  { background-position:-750px 0 !important; }
+
+		.tool {
+		background:#fff;
+		}
+		/*]]>*/
+		</style>
+	</head>
+	<body onload="MM_preloadImages('images/css_elements/social_media_icons/facebook_lg.jpg','images/css_elements/social_media_icons/digg_lg.jpg','file:///Macintosh HD/Users/LaurenBarker/Documents/Web LB/Plover Stomp/images/css_elements/social_media_icons/reddit_lg.jpg','images/css_elements/social_media_icons/twitter_lg.jpg')">
+		<div id="container">
+			<div id="logo">
+				<h1>
+					Ploverstomp.com
+				</h1>
+			</div>
+			<div id="header">
+				<div id="social_media">
+					<ul id="nav_s">
+						<li class="facebook">
+							<a href="http://www.facebook.com/group.php?gid=144157768322" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Facebook Icon','','images/css_elements/social_media_icons/facebook_lg.jpg',1)" target="_blank"><img src="images/css_elements/social_media_icons/facebook_sm.jpg" alt="facebook" name="Facebook Icon" width="50" height="50" border="0" id="Facebook Icon" /></a>
+						</li>
+						<li class="digg">
+							<a href="http://digg.com/d318gNg" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('digg','','images/css_elements/social_media_icons/digg_lg.jpg',1)" target="_blank"><img src="images/css_elements/social_media_icons/digg_sm.jpg" alt="digg it" name="digg" width="50" height="50" border="0" id="digg" /></a>
+						</li>
+						<li class="reddit">
+							<a href="http://www.reddit.com/r/environment/comments/9zg7y/stomp_on_those_snowy_plovers_its_time_the_go/" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('reddit','','images/css_elements/social_media_icons/reddit_lg.jpg',1)" target="_blank"><img src="images/css_elements/social_media_icons/reddit_sm.jpg" alt="reddit" name="reddit" width="50" height="50" border="0" id="reddit" /></a>
+						</li>
+						<li class="twitter">
+							<a href="http://twitter.com/PloverStomp" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('twitter','','images/css_elements/social_media_icons/twitter_lg.jpg',1)" target="_blank"><img src="images/css_elements/social_media_icons/twitter_sm.jpg" alt="twitter" name="twitter" width="50" height="50" border="0" id="twitter" /></a>
+						</li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+				<div id="primary_nav">
+					<ul id="nav">
+						<li class="home">
+							<a href="index.html">Home</a>
+						</li>
+						<li class="mission">
+							<a href="mission.html">Our Mission</a>
+						</li>
+						<li class="info">
+							<a href="info.html">The Info</a>
+						</li>
+						<li class="stuff">
+							<a href="stuff.html">Cool Stuff</a>
+						</li>
+						<li class="stories">
+							<a href="stories.html">Your Stories</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="content">
+				<div style="margin-bottom:-5px">
+					<img src="images/css_elements/top_corners.gif" alt="container" />
+				</div>
+				<div id="content_middle">
+					<!-- root element for everything -->
+					<div id="scroll">
+						<!-- thumbnails -->
+						<div id="thumbs" class="t">
+							<!-- scrollable navigator root element -->
+							<div class="navi">
+								<a id="t0" class="active" name="t0"></a> <a id="t1" name="t1"></a> <a id="t2" name="t2"></a> <a id="t3" name="t3"></a> <a id="t4" name="t4"></a> <a id="t5" name="t5"></a>
+							</div>
+						</div><!-- required for IE6/IE7 -->
+						<br clear="all" />
+						<!-- scrollable items -->
+						<div id="tools">
+							<!-- empty slot -->
+							<!-- intro "page" -->
+							<div id="intro" class="tool">
+								<h2 id="h2_info">
+									The Info
+								</h2>
+								<div style=" height:360px; overflow-y:scroll">
+									<p>
+										The sign at you favorite beach reads “Public Property, No Trespassing, Your Tax Dollars at Work” saving the snowy plover. What is the snowy plover and why is beach public access being denied or restricted?<img src="images/plover.gif" class="fl_rt" alt="plover" /> This is a good question, since the plover has always been a common bird in the United States. Why is it protected; it was federally listed as threatened under the Endangered Species Act of 1973.. The United States Fish and Wildlife Service decided that the snowy plovers that nest along the west coast of the United States are separate population from those that nest at inland sites. Instantly, the coastal populations of the snowy plover were reduced so that they could meet the criteria for listing it as a “threatened species” a under the Endangered Species Act. Loss of public beach followed. Snowy plovers were not hunted into near-extension, poisoned by pesticides, eaten by dogs, stomped on by horses, scared to death by people flying kites or run over by joggers. A human decision created the alleged decline of the snowy plover. Human, conservation managers in particular have failed to recognize that ” There is no balance in nature there are only relative rates of change.” It is impossible to try to maintain the balance of nature that existed in the past.
+									</p>
+									<p>
+										Welcome to PloverStomp.com and a realistic perspective on beach access and conservation.
+									</p>
+								</div>
+							</div><!-- Biological-->
+							<div class="tool">
+								<h2 id="h2_biological">
+									Biological Information about the Snowy Plover
+								</h2>
+								<div style=" height:360px; overflow-y:scroll">
+									<p>
+										The western snowy plover is a small shorebird, about 6 inches long, with a thin dark bill, pale brown to gray upper parts, white or buff colored belly, and darker patches on its shoulders and head, white forehead and eyebrow line. Snowy plovers also have black patches above their white forehead and behind the eye.<img src="images/plover_snowy.jpg" alt="plover" class="fl_lft" /> Their dark gray to black legs are a useful characteristic when comparing them to other plover species. Plovers forage for small invertebrates in wet and dry sand, in beach kelp, and within low dune vegetation along the beach. Most sandy beaches&nbsp; along the coasts of California, Oregon, and Washington&nbsp; are considered snowy plover breeding and wintering areas. Most publicly owned sandy&nbsp; beaches are also considered breeding and wintering areas. These areas are subject to the Recovery Plan beaches in Southern California are heavily used by the public and routinely subjected to beach racking (aka bull-dozed) . This makes it unlikely that the Recovery Plan can be implemented in these areas. Therefore, the beaches in the less populated areas of the west coast of the United States are the prime target for implementation of the Recovery Plan. Thousands of miles of coastline are threatened with closure or restricted human access in order to provide habitat for a bird that is very common.
+									</p>
+								</div>
+							</div><!-- Environmental-->
+							<div class="tool">
+								<h2 id="h2_enviorment">
+									The Environmental Information
+								</h2>
+								<div style=" height:360px; overflow-y:scroll">
+									<p>
+										<strong>Legal Status: Threatened</strong>
+									</p>
+									<p>
+										The Pacific coast population of the western snowy plover was listed as threatened on March 5, 1993. <em>Federal Register</em> 58 FR 12864.
+									</p>
+									<p>
+										Designation as a threatened includes: Any species which is likely to become an endangered species within the foreseeable future throughout all or a significant portion of its range.
+									</p>
+									<p>
+										<strong>Population Decline</strong>
+									</p>
+									<p>
+										Records indicating that nesting western snowy plovers were historically more widely distributed in coastal California, Oregon, and Washington are unsubstantiated.
+									</p>
+									<p>
+										<strong>Humans caused population decline</strong>
+									</p>
+									<p>
+										It is claimed that human activities, such as walking, jogging, running pets, horseback riding, and vehicle use, are responsible for the ongoing decline in snowy plover breeding sites and populations. Many scientific studies concerning the impacts of humans on snowy plovers are contradictory. The west coast nesting season, from March through September, coincides with the most popular times of human beach use (Memorial Day through Labor Day).
+									</p>
+								</div>
+							</div><!-- Politcal -->
+							<div class="tool">
+								<h2 id="h2_politics">
+									The Politcal side of things
+								</h2>
+								<div style=" height:360px; overflow-y:scroll">
+									<p>
+										Why is the Pacific coast population of the western snowy plover protected as threatened species under the Endangered Species Act of 1973? Because human have decided that they are responsible for maintaining the balance of nature. This point of view maintains that humans control their own destiny and that of all life on Earth. In short we are “Anthropocentric”, the human species is considered the center of the universe everything in the universe is conceived in terms of human values. We are uncomfortable with the idea of the randomness and constant change we see in life and the world around us. Conservation managers in particular, have failed to recognize that ” There is no balance in nature there are only relative rates of change.” It is impossible to try to maintain the balance of nature. The terms ‘ecosystem and ecosystem health’ are ill-defined and associated with an outmoded, superorganismic view of the ecosystem.
+									</p>
+									<p>
+										The U.S. Fish and Wildlife Service, is committed to applying an ecosystem approach to conservation to allow for efficient and effective conservation of the nation’s biological diversity (U.S. Fish and Wildlife Service 1994). The goal of this policy is to incorporate ecosystem considerations in the development and implementation of recovery plans for communities or ecosystems. In particular, these recovery plans shall be developed and implemented in a manner that conserves the biotic diversity of the ecosystems upon which the listed species depend. The idea is that improved habitat conditions for co-occurring species within the coastal beachdune ecosystem will undoubtedly occur through attainment of western snowy plover recovery plan objectives.
+									</p>
+									<p>
+										The snowy plover is being used as an Umbrella species or Flagship species: A species that needs such large tracts of habitat that supposedly saving it will automatically save many other species. Because it is so difficult to monitor and manage every aspect of biodiversity, several shortcuts have been proposed whereby we monitor and/or protect single umbrella or flagship species, such as the snowy plover.
+									</p>
+									<p>
+										Unfortunately, monitoring of the single umbrella or flagship species is grossly inaccurate, and moreover impossible to attain. The success of this policy, however, is guaranteed. The political impact is to increase funding for more restoration efforts and monitoring of the flagship species, and thus the governance of those efforts. Increased monitoring and restoration efforts might easily disturb the natural recovery of the flagship species, and reinforce the policy.
+									</p>
+									<p>
+										A flagship species, such as the snowy plover, is charismatic and is used to successfully anchor a conservation campaign because it arouses sympathy, public interest, and stimulates conservation awareness, action, and funding for its protection. Sympathy for flagship species are often very expensive in terms of lost public coastal access and have negative economic impacts for residents and tourists alike.
+									</p>
+								</div>
+							</div><!--Monetary -->
+							<div class="tool">
+								<h2 id="h2_monetary">
+									The Monetary
+								</h2>
+								<div style=" height:360px; overflow-y:scroll">
+									<p>
+										Protecting the western snowy plover is expensive. Results are tenuous and do not justify the cost.
+									</p>
+									<p>
+										<strong>ESTIMATED COST OF RECOVERY:</strong> $150,000,000 plus additional costs that cannot be estimated at this time.
+									</p>
+									<p>
+										<strong>DATE OF RECOVERY:</strong> Delisting could occur by 2047 if the recovery criteria above have been met.
+									</p>
+									<p>
+										The cost of this burden is public coastal access. Publicly owned beaches, military bases, and other government controlled coastlines are subject to closure. Private beaches, are not subject to the Snowy Plover Recovery Plan or closure to their owners.
+									</p>
+								</div>
+							</div><!-- Recovery Plan -->
+							<div class="tool">
+								<div style=" height:360px; overflow-y:scroll">
+									<h2 id="h2_recovery">
+										The Recovery Plan of Snowy Plovers
+									</h2>
+									<p>
+										<strong>Highlights of the Snowy Plover Recovery Plan</strong>
+									</p>
+									<p>
+										The western snowy plover recovery plan provides a strategy for recovery of the population. Recovery objectives in the recovery plan include: (1) achieving well-distributed increases in numbers and productivity of breeding adult birds, and (2) providing for long-term protection of breeding and wintering plovers and their habitat.
+									</p>
+									<p>
+										The recovery plan states that delisting will be considered when the following criteria have been met:
+									</p>
+									<ol style=" margin-left:100px">
+										<li>maintain for 10 years an average of 3,000 breeding adults
+										</li>
+										<li>maintain a 5-year average productivity of at least 1.0 fledged chick per male in each recovery unit in the last 5 years prior to delisting; and
+										</li>
+										<li>have in place participation plans among cooperating agencies, landowners, and conservation organizations to ensure protection and management of breeding, wintering, and migration areas
+										</li>
+									</ol>
+									<p>
+										<strong>DATE OF RECOVERY:</strong> Delisting could occur by 2047 if the recovery criteria above have been met.
+									</p>
+									<p>
+										<a href="http://www.fws.gov/arcata/es/birds/WSP/documents/RecoveryPlanWebRelease_09242007/WSP%20Final%20Appendices%20Part%201.pdf" target="_blank">http://www.fws.gov/arcata/es/birds/WSP/documents/RecoveryPlanWebRelease_09242007/WSP%20Final%20Appendices%20Part%201.pdf</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<img src="images/css_elements/bottom_corners.gif" alt="container" />
+				</div>
+			</div>
+			<div id="footer">
+				<ul>
+					<li>
+						<a href="index.html">home</a>
+					</li>
+					<li>
+						<a href="stuff.html">merchandise</a>
+					</li>
+					<li>
+						<a href="info.html">info</a>
+					</li>
+					<li>
+						<a href="stories.html">your stories</a>
+					</li>
+					<li>
+						<a href="site_map.html">site map</a>
+					</li>
+					<li class="last">
+						<a href="contact.html">contact</a>
+					</li>
+				</ul>
+				<p class="fl_rt">
+					Copyright 2009 Ploverstomp.com
+				</p>
+				<p class="fl_lft">
+					Site By <a href="http://www.weblbdesigns.com/">Web LB</a>
+				</p>
+				<div class="clear"></div>
+			</div>
+		</div><script type="text/javascript">
+//<![CDATA[
+		// initialize scrollable and return the programming API
+		var api = $("#scroll").scrollable({
+		items: '#tools',
+		size: 1,
+		clickable: false
+
+		// use the navigator plugin
+		}).navigator({api: true});
+
+
+		// this callback does the special handling of our "intro page"
+		api.onStart(function(e, i) {
+
+		// when on the first item: hide the intro
+		if (i) {
+		$("#intro").fadeOut("slow");
+
+		// otherwise show the intro
+		} else {
+		$("#intro").fadeIn(1000);
+		}
+
+		// toggle activity for the intro thumbnail
+		$("#t0").toggleClass("active", i == 0);
+		});
+
+		// a dedicated click event for the intro thumbnail
+		$("#t0").click(function() {
+
+		// seek to the beginning (the hidden first item)
+		$("#scroll").scrollable().begin();
+
+		});
+
+		//]]>
+		</script>
+	</body>
+</html>

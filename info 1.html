@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>PloverStomp.com</title>
+<link rel="stylesheet" type="text/css" href="css/global.css"/>
+<style type="text/css" media="all">@import "css/global.css";</style>
+<script src="http://cdn.jquerytools.org/1.1.2/full/jquery.tools.min.js"></script>
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+<style>
+
+#scroll {
+	background-color:#FFF;
+	position:relative;
+	height:400px;
+	overflow:hidden;
+	width:900px;
+	padding:10px;
+	
+}
+
+#tools {
+	width:9999em;
+	position:absolute; top:200px;
+	height:300px;
+}
+
+.tool {
+	float:left;
+	width:850px;
+	margin:0px 40px 0px 20px;
+	height:200px;
+	background-repeat:no-repeat;
+	background-position:0 -40px;
+}
+
+.details {
+	background-color:#fff;
+	color:#666;
+	float:left;
+	font-size:20px;
+	margin:270px 0 0 0;
+	padding:10px 60px;
+	width:525px;
+}
+#thumbs {
+	background: url(images/css_elements/info_nav.jpg) no-repeat -21px -90px;
+	height:100px;
+	position:absolute;
+	top:-10px;
+	width:900px;
+	left:0px;
+}
+
+.t a {
+	background:transparent url(images/css_elements/info_nav.jpg) no-repeat scroll;
+	margin-left:0px;
+	display:block;
+	width:150px;
+	float:left;
+	height:100px;
+	line-height:100px;
+	cursor:pointer; 
+	z-index:2
+}
+
+.t a.active {
+	cursor:default !important;
+}
+
+.navi { 
+	margin-left:14px;
+	_margin-left:4px;
+height:100px; z-index:2;
+width:900px
+}
+
+
+/* CSS sprite for the navigation */
+#t0 		  { background-position:-0px -100px}
+#t0.active { background-position:-0px 0 !important; }
+#t0:hover  { background-position:-0px -200px; }
+#t0:active { background-position:-0px -300px; }
+
+#t1			{ background-position:-150px -100px; }
+#t1:hover 	{ background-position:-150px -200px; }
+#t1:active	{ background-position:-150px -300px; }
+#t1.active	{ background-position:-150px 0 !important; }
+
+#t2			{ background-position:-300px -100px; }
+#t2:hover 	{ background-position:-300px -200px; }
+#t2:active	{ background-position:-300px -300px; }
+#t2.active	{ background-position:-300px 0 !important; }
+
+#t3			{ background-position:-450px -100px; }
+#t3:hover 	{ background-position:-450px -200px; }
+#t3:active	{ background-position:-450px -300px; }
+#t3.active	{ background-position:-450px 0 !important; }
+
+#t4			{ background-position:-600px -100px; }
+#t4:hover 	{ background-position:-600px -200px; }
+#t4:active	{ background-position:-600px -300px; }
+#t4.active	{ background-position:-600px 0 !important; }
+
+#t5			{ background-position:-750px -100px; }
+#t5:hover 	{ background-position:-750px -200px; }
+#t5:active	{ background-position:-750px -300px; }
+#t5.active	{ background-position:-750px 0 !important; }
+
+</style>
+
+
+</head>
+
+<body onload="MM_preloadImages('images/css_elements/social_media_icons/facebook_lg.jpg','images/css_elements/social_media_icons/digg_lg.jpg','file:///Macintosh HD/Users/LaurenBarker/Documents/Web LB/Plover Stomp/images/css_elements/social_media_icons/reddit_lg.jpg','images/css_elements/social_media_icons/twitter_lg.jpg')">
+
+<div id="container">
+<div id="logo">
+    <h1>Ploverstomp.com</h1>
+  </div>
+<div id="header">
+  <div id="social_media">
+    <ul id="nav_s">
+      <li class="facebook"><a href="http://www.facebook.com/group.php?gid=144157768322" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Facebook Icon','','images/css_elements/social_media_icons/facebook_lg.jpg',1)" target="_blank"><img src="images/css_elements/social_media_icons/facebook_sm.jpg" alt="facebook" name="Facebook Icon" width="50" height="50" border="0" id="Facebook Icon"/></a></li>
+      <li class="digg"><a href="http://digg.com/d318gNg" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('digg','','images/css_elements/social_media_icons/digg_lg.jpg',1)" target="_blank"><img src="images/css_elements/social_media_icons/digg_sm.jpg" alt="digg it" name="digg" width="50" height="50" border="0" id="digg" /></a></li>
+      <li class="reddit"><a href="http://www.reddit.com/r/environment/comments/9zg7y/stomp_on_those_snowy_plovers_its_time_the_go/" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('reddit','','images/css_elements/social_media_icons/reddit_lg.jpg',1)" target="_blank"><img src="images/css_elements/social_media_icons/reddit_sm.jpg" alt="reddit" name="reddit" width="50" height="50" border="0" id="reddit" /></a></li>
+      <li class="twitter"><a href="http://twitter.com/PloverStomp" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('twitter','','images/css_elements/social_media_icons/twitter_lg.jpg',1)" target="_blank"><img src="images/css_elements/social_media_icons/twitter_sm.jpg" alt="twitter" name="twitter" width="50" height="50" border="0" id="twitter" /></a></li>
+    </ul>
+  </div>
+  <div class="clear">
+  </div>
+  
+  <div id="primary_nav">
+  <ul id="nav">
+    <li class="home"><a href="index.html">Home</a></li>
+    <li class="mission"><a href="mission.html">Our Mission</a></li>
+    <li class="info"><a href="info.html">The Info</a></li>
+    <li class="stuff"><a href="stuff.html">Cool Stuff</a></li>
+    <li class="stories"><a href="stories.html">Your Stories</a></li>
+  </ul>
+ 
+  </div>
+</div>
+<div id="content">
+  <div style="margin-bottom:-5px"> 
+  	<img src="images/css_elements/top_corners.gif"  alt="container" /> 
+  </div>
+  <div id="content_middle">
+  
+
+<!-- root element for everything -->
+<div id="scroll">
+
+	
+
+	<!-- thumbnails -->
+	<div id="thumbs" class="t">
+
+		<!-- intro page navi button -->
+		<a id="t0" class="active"></a>
+
+		<!-- scrollable navigator root element -->
+		<div class="navi">
+			<a style="display:none"></a>
+			<a id="t1"></a>
+			<a id="t2"></a>
+			<a id="t3"></a>
+			<a id="t4"></a>
+			<a id="t5"></a>
+		</div>
+
+	</div>
+    <!-- required for IE6/IE7 -->
+	<br clear="all" />
+	<!-- scrollable items -->
+	<div id="tools">
+
+
+
+		<!-- empty slot -->
+		<div class="tool">&nbsp;</div>
+
+		<!-- Biological-->
+		<div class="tool">
+
+		</div>
+
+		<!-- Environmental-->
+		<div class="tool">
+       
+
+		</div>
+
+		<!-- Politcal -->
+		<div class="tool">
+		</div>
+
+		<!--Monetary -->
+		<div class="tool">
+      
+		</div>
+
+		<!-- Recovery Plan -->
+       
+		<div class="tool">
+
+
+		</div>
+
+
+	</div>
+
+	<!-- intro "page" -->
+	<div id="intro" class="tool">
+    <p style="color:#600 ; margin-top:200px"><em>Our content writers cant get it together and are LAGGING! But dont worry, were kicking their butts into gear and they should have the info content ready by November 4th. </em></p>
+
+	</div>
+    
+    
+	
+
+
+</div>
+
+
+
+</div>
+  <div> 
+  	<img src="images/css_elements/bottom_corners.gif" alt="container" /> 
+  </div>
+</div>
+       <div id="footer">
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="stuff.html">merchandise</a></li>
+          <li><a href="info.html">info</a></li>
+          <li><a href="stories.html">your stories</a></li>
+          <li><a href="site_map.html">site map</a></li>
+          <li class="last"><a href="contact.html">contact</a></li>
+        </ul>
+        <p class="fl_rt">Copyright 2009 Ploverstomp.com</p>
+        <p class="fl_lft">Site By <a href="http://www.weblbdesigns.com/">Web LB</a></p>
+        <div class="clear">
+        </div>
+      </div>
+</div>
+<script>
+// initialize scrollable and return the programming API
+var api = $("#scroll").scrollable({
+	items: '#tools',
+	size: 1,
+	clickable: false
+
+// use the navigator plugin
+}).navigator({api: true});
+
+
+// this callback does the special handling of our "intro page"
+api.onStart(function(e, i) {
+
+	// when on the first item: hide the intro
+	if (i) {
+		$("#intro").fadeOut("slow");
+
+	// otherwise show the intro
+	} else {
+		$("#intro").fadeIn(1000);
+	}
+
+	// toggle activity for the intro thumbnail
+	$("#t0").toggleClass("active", i == 0);
+});
+
+// a dedicated click event for the intro thumbnail
+$("#t0").click(function() {
+
+	// seek to the beginning (the hidden first item)
+	$("#scroll").scrollable().begin();
+
+});
+
+</script>
+</body>
+</html>

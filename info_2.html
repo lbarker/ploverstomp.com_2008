@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>PloverStomp.com</title>
+<link rel="stylesheet" type="text/css" href="css/global.css"/>
+<style type="text/css" media="all">@import "css/global.css";</style>
+<script src="http://cdn.jquerytools.org/1.1.2/full/jquery.tools.min.js"></script>
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+<style>
+
+#scroll {
+	background-color:#FFF;
+	position:relative;
+	height:460px;
+	overflow:hidden;
+	width:900px;
+	padding:10px;
+	
+}
+
+#tools {
+	width:9999em;
+	position:absolute;
+	height:400px;
+}
+
+.tool {
+	float:left;
+	width:850px;
+	margin:0px 40px 0px 20px;
+	height:400px;
+	background-repeat:no-repeat;
+	background-position:0 -40px;
+}
+
+.details {
+	background-color:#fff;
+	color:#666;
+	float:left;
+	font-size:20px;
+	margin:270px 0 0 0;
+	padding:10px 60px;
+	width:525px;
+}
+
+.demos {
+	background-color:#fff;
+	background-color:rgba(255, 255, 255, 0.8);
+	border-left:1px solid #ddd;
+	float:right;
+	min-height:365px;
+	padding:0 25px;
+	width:272px;
+}
+
+.demos h2 {
+	color:#065598;
+	font-size:22px;
+	display:block;
+	padding:10px 0;
+}
+
+.demos a {
+	color:#666;
+	font-size:12px;
+	text-decoration:none;
+}
+
+.demos p {
+	margin:0 0 4px;
+	background:transparent url(http://static.flowplayer.org/tools/img/bullet.png) no-repeat scroll 0 2px;
+	padding:2px 0 1px 22px;
+}
+
+#thumbs {
+	background: url(images/demo_nav.gif) no-repeat;
+	height:90px;
+	position:absolute;
+	top:410px;
+	width:900px;
+	left:-8px;
+}
+
+.t a {
+	background:transparent url(images/demo_nav.gif) no-repeat scroll -21px -90px;
+	margin-left:11px;
+	display:block;
+	width:99px;
+	float:left;
+	height:90px;
+	cursor:pointer;
+}
+
+.t a.active {
+	cursor:default !important;
+}
+
+.navi {
+	margin-left:314px;
+	_margin-left:304px;
+}
+
+/* CSS sprite for the navigation */
+#t0 		  { margin-left:20px; _margin-left:10px;}
+#t0.active { background-position:-21px 0 !important; }
+#t0:hover  { background-position:-21px -180px; }
+#t0:active { background-position:-21px -270px; }
+
+#t1			{ background-position:-325px -90px; }
+#t1:hover 	{ background-position:-325px -180px; }
+#t1:active	{ background-position:-325px -270px; }
+#t1.active	{ background-position:-325px 0 !important; }
+
+#t2			{ background-position:-435px -90px; }
+#t2:hover 	{ background-position:-435px -180px; }
+#t2:active	{ background-position:-435px -270px; }
+#t2.active	{ background-position:-435px 0 !important; }
+
+#t3			{ background-position:-545px -90px; }
+#t3:hover 	{ background-position:-545px -180px; }
+#t3:active	{ background-position:-545px -270px; }
+#t3.active	{ background-position:-545px 0 !important; }
+
+#t4			{ background-position:-655px -90px; }
+#t4:hover 	{ background-position:-655px -180px; }
+#t4:active	{ background-position:-655px -270px; }
+#t4.active	{ background-position:-655px 0 !important; }
+
+#t5			{ background-position:-765px -90px; }
+#t5:hover 	{ background-position:-765px -180px; }
+#t5:active	{ background-position:-765px -270px; }
+#t5.active	{ background-position:-765px 0 !important; }
+
+#t6			{ background-position:-875px -90px; }
+#t6:hover 	{ background-position:-875px -180px; }
+#t6:active	{ background-position:-875px -270px; }
+#t6.active	{ background-position:-875px 0 !important; }
+</style>
+
+
+</head>
+
+<body onload="MM_preloadImages('images/css_elements/social_media_icons/facebook_lg.jpg','images/css_elements/social_media_icons/digg_lg.jpg','file:///Macintosh HD/Users/LaurenBarker/Documents/Web LB/Plover Stomp/images/css_elements/social_media_icons/reddit_lg.jpg','images/css_elements/social_media_icons/twitter_lg.jpg')">
+
+<div id="container">
+<div id="logo">
+    <h1>Ploverstomp.com</h1>
+  </div>
+<div id="header">
+  <div id="social_media">
+    <ul id="nav_s">
+      <li class="facebook"><a href="http://www.facebook.com/group.php?gid=144157768322" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Facebook Icon','','images/css_elements/social_media_icons/facebook_lg.jpg',1)" target="_blank"><img src="images/css_elements/social_media_icons/facebook_sm.jpg" alt="facebook" name="Facebook Icon" width="50" height="50" border="0" id="Facebook Icon"/></a></li>
+      <li class="digg"><a href="digg.com" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('digg','','images/css_elements/social_media_icons/digg_lg.jpg',1)" target="_blank"><img src="images/css_elements/social_media_icons/digg_sm.jpg" alt="digg it" name="digg" width="50" height="50" border="0" id="digg" /></a></li>
+      <li class="reddit"><a href="reddit.com" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('reddit','','images/css_elements/social_media_icons/reddit_lg.jpg',1)" target="_blank"><img src="images/css_elements/social_media_icons/reddit_sm.jpg" alt="reddit" name="reddit" width="50" height="50" border="0" id="reddit" /></a></li>
+      <li class="twitter"><a href="twitter.com" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('twitter','','images/css_elements/social_media_icons/twitter_lg.jpg',1)" target="_blank"><img src="images/css_elements/social_media_icons/twitter_sm.jpg" alt="twitter" name="twitter" width="50" height="50" border="0" id="twitter" /></a></li>
+    </ul>
+  </div>
+  <div class="clear">
+  </div>
+  
+  <div id="primary_nav">
+  <ul id="nav">
+    <li class="home"><a href="index.html">Home</a></li>
+    <li class="mission"><a href="mission.html">Our Mission</a></li>
+    <li class="info"><a href="info.html">The Info</a></li>
+    <li class="stuff"><a href="stuff.html">Cool Stuff</a></li>
+    <li class="stories"><a href="stories.html">Your Stories</a></li>
+  </ul>
+ 
+  </div>
+</div>
+<div id="content">
+  <div> 
+  	<img src="images/css_elements/top_corners.gif"  alt="container" /> 
+  </div>
+  <div id="content_middle">
+
+<!-- root element for everything -->
+<div id="scroll">
+
+	<!-- scrollable items -->
+	<div id="tools">
+
+
+
+		<!-- empty slot -->
+		<div class="tool">&nbsp;</div>
+
+		<!-- tabs -->
+		<div class="tool">
+
+<h3>Geographic Range</h3>
+<p>The Pacific coast population of the snowy plover is defined as those individuals that nest adjacent to tidal waters of the Pacific Ocean, and includes all nesting birds on the mainland coast, peninsulas, offshore islands, adjacent bays, estuaries, and coastal rivers (USDI Fish and Wildlife Service 2004). The current known breeding range of this population extends from Damon Point, Washington, to Bahia Magdelena, Baja California, Mexico (USDI Fish and Wildlife Service 2006). Snowy plovers that nest at inland sites are not considered part of the Pacific coast population, although they may migrate to coastal areas during winter months.</p>
+
+		</div>
+
+		<!-- tooltip -->
+		<div class="tool">
+         <h3>Additional Goals of the Snowy Plover Recovery Plan </h3>
+    <p>ASSOCIATED SENSITIVE SPECIES OF THE COASTAL BEACH-DUNE
+ECOSYSTEM AND ADJACENT HABITATS</p>
+	<p>The U.S. Fish and Wildlife Service, is committed to applying an ecosystem
+approach to conservation to allow for efficient and effective conservation of our
+nation’s biological diversity (U.S. Fish and Wildlife Service 1994a). In terms of
+recovery plans, it is our policy to incorporate ecosystem considerations in the
+following manner:</p>
+
+		<ol class="ol_info_list">
+       	<li>Develop and implement recovery plans for communities or ecosystems
+where multiple listed species, candidates and species of concern occur.</li>
+		<li>Develop and implement recovery plans for threatened and endangered
+species in a manner that restores, reconstructs, or rehabilitates the
+structure, distribution, connectivity, and function upon which those listed
+species depend. In particular, these recovery plans shall be developed and
+implemented in a manner that conserves the biotic diversity of the
+ecosystems upon which the listed species depend.</li>
+		<li>Expand the scope of recovery plans to address ecosystem conservation by enlisting local jurisdictions, private organizations, and affected individuals
+in recovery plan development and implementation.</li>
+		<li>Develop and implement agreements among multiple agencies that allow
+for sharing of resources and decision making on recovery actions for
+wide-ranging species (U.S. Fish and Wildlife Service 1994a).</li>
+		<li>Improved habitat conditions for co-occurring species within the coastal beachdune ecosystem will undoubtedly occur through attainment of western snowy plover recovery objectives.</li>
+        </ol>
+        <p>Over fifty proposed, or candidate fish and wildlife species, and federally recognized species of concern occur in habitats within or adjacent to the snowy plover ecosystem (Table E-1). Some of these species are included in existing or developing recovery plans, and actions to recover the western snowy plover will also contribute to implementation of those recovery plans.</p>
+        <p><a href="http://www.fws.gov/arcata/es/birds/WSP/documents/RecoveryPlanWebRelease_09242007/WSP%20Final%20Appendices%20Part%201.pdf">Source</a></p>
+
+		</div>
+
+		<!-- overlay -->
+		<div class="tool">
+<h2>Background Information</h2>
+         <p><strong><em>Western Snowy Plover : Charadrius alexandrinus nivosus</em></strong></p>
+        <h3>Legal Status</h3>
+         <p><strong>Official Federal Status: Threatened,</strong> the Pacific Coast population of the western snowy plover is federally listed under the Endangered Species Act of 1973 as threatened. The western snowy plover is a Bird Species of Special Concern in California. Snowy plovers were listed as endangered under Washington Department of Game Policy No. 402 in 1981, and as threatened by the Oregon Fish and Wildlife Commission in 1975. The threatened status in Oregon was reaffirmed in 1989 under the Oregon Endangered Species Act.</p>
+         <p>&nbsp;</p>
+         <p><strong>Definitions of Federal Status</strong></p>
+			<ul  class="info_list">
+            	<li><strong>Endangered:</strong> Any species which is in danger of extinction throughout all or a significant portion of it’s range.</li>
+				<li><strong><em>Threatened:</em></strong>Any species which is likely to become an endangered species within the foreseeable future throughout all or a significant portion of its range.</li>
+				<li><strong>Species of Concern:</strong> Federally-recognized sensitive species for which further biological research and field study are needed to resolve its conservation status.</li>
+		</ul>
+       <p><strong>Date Listed: </strong>The Pacific coast population of the western snowy plover was listed as threatened on March 5, 1993. Federal Register 58 FR 12864. (pdf, 4.0 MB)</p>
+		<p><strong>Critical Habitat: </strong>On September 29, 2005, we published a final rule to re-designate critical habitat along the coasts of California, Oregon, and Washington. Federal Register 70 F.</p>
+		<p><strong>Recovery Plan: </strong>A recovery plan was published in 2007. The plan identifies six recovery units for the listed population.</p>  
+<p><a href="http://www.fws.gov/arcata/es/birds/WSP/documents/RecoveryPlanWebRelease_09242007/WSP%20Final%20RP%2010-1-07.pdf">Recovery Plan PDF</a></p>
+		</div>
+
+		<!-- expose -->
+		<div class="tool">
+        <h4>Highlights of the Snowy Plover Recovery Plan</h4>
+<p>The western snowy plover recovery plan provides a strategy for recovery of the listed population. Recovery objectives in the recovery plan include: (1) achieving well-distributed increases in numbers and productivity of breeding adult birds, and (2) providing for long-term protection of breeding and wintering plovers and their habitat.</p>
+<p>The recovery plan states that delisting will be considered when the following criteria have been met:</p>
+	<ol class="ol_info_list">
+    <li>Maintain for 10 years an average of 3,000 breeding adults distributed among 6 recovery units as follows:</li>
+    	<ul class="info_list">
+        	<li>San Luis Obispo to Ventura Counties, California, 1,200 breeding adults;</li> 
+            <li>Sonoma to Monterey Counties, 400 breeding adults;</li>  
+            <li>Del Norte to Mendocino Counties, California, 150 breeding adults; San Francisco Bay, California, 500 breeding adults;</li>  
+            <li>and Los Angeles to San Diego Counties, California, 500 breeding adults;</li> 
+		</ul> 
+	<li>Maintain a 5-year average productivity of at least 1.0 fledged chick per male in each recovery unit in the last 5 years prior to delisting</li>
+	<li>have in place participation plans among cooperating agencies, landowners, and conservation organizations to ensure protection and management of breeding, wintering, and migration areas listed in Appendix B of the plan to maintain the subpopulation sizes and average productivity specified in criteria 1 and 2 above.</li>
+    </ol>  
+    <p>Source: <a href="http://www.fws.gov/arcata/es/birds/WSP/documents/RecoveryPlanWebRelease_09242007/WSP%20Final%20Appendices%20Part%201.pdf">Recovery Plan PDF</a></p>
+
+		</div>
+
+		<!-- scrollable -->
+       
+		<div class="tool">
+        <h3>Life History</h3>
+<p>Pacific coast plovers forage for small invertebrates in wet or dry beach-sand, in beach kelp, and within low foredune vegetation (USDI Fish and Wildlife Service 2004). Plovers may also use dry salt ponds and river gravel bars for feeding. The breeding season in the United States extends from March 1 through September 30. Clutches commonly consist of three eggs laid in shallow depressions in the sand. Pacific coast snowy plovers are polyandrous (i.e., a female may breed with more than one male), and share incubation duties. Females desert their broods shortly after hatching, leaving the chick rearing duties to the male. Females may renest if another male is available and if time remains in the season to do so. Snowy plover chicks are precocial, leaving the nest within hours after hatching to search for food. Males attend the young until they fledge, which takes about a month. Females generally assist the male to care for the last brood of the season. Adult plovers do not feed their chicks, rather they lead them to suitable feeding areas. Adults will present a broken-wing or tail-drag display when a predator approaches a brood or nest.
+The Pacific coast population of the western snowy plover breeds primarily on coastal beaches from southern Washington to southern Baja California, Mexico. The population breeds above the high tide line on coastal beaches, sand spits, dune-backed beaches, sparsely-vegetated dunes, beaches at creek and river mouths, and salt pans at lagoons and estuaries (U.S. Fish and Wildlife Service 2001). Less common nesting habitat includes bluff-backed beaches, dredged material disposal sites, salt pond levees, dry salt ponds, and river bars (U.S. Fish and Wildlife Service 2001). Suitable nesting habitat is distributed throughout the listed range, but may be widely separated by areas of rocky shoreline.</p>
+
+
+		</div>
+
+		<!-- flashembed -->
+		<div class="tool">
+
+			
+
+
+		</div>
+
+	</div>
+
+	<!-- intro "page" -->
+	<div id="intro" class="tool">
+ <h2> Biology and Natural History</h2>
+<h3>Identification</h3>
+<p>The western snowy plover is a small shorebird, about 6 inches long, with a thin dark bill, pale brown to gray upper parts, white or buff colored belly, and darker patches on its shoulders and head, white forehead and eyebrow line. Snowy plovers also have black patches above their white forehead and behind the eye. Juvenile and basic (winter) plumages are similar to adult, but the black patches are absent. Some breeding males, especially in the southern portion of the species’ range, may have a rusty or tawny cap. Their dark gray to black legs are a useful characteristic when comparing them to other plover species (Page et al. 1995).</p>
+
+
+	</div>
+
+	<!-- required for IE6/IE7 -->
+	<br clear="all" />
+
+	<!-- thumbnails -->
+	<div id="thumbs" class="t">
+
+		<!-- intro page navi button -->
+		<a id="t0" class="active"></a>
+
+		<!-- scrollable navigator root element -->
+		<div class="navi">
+			<a style="display:none"></a>
+			<a id="t1"></a>
+			<a id="t2"></a>
+			<a id="t3"></a>
+			<a id="t4"></a>
+			<a id="t5"></a>
+			<a id="t6"></a>
+		</div>
+
+	</div>
+
+</div>
+
+  </div>
+  <div> 
+  	<img src="images/css_elements/bottom_corners.gif" alt="container" /> 
+  </div>
+</div>
+       <div id="footer">
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="stuff.html">merchandise</a></li>
+          <li><a href="info.html">info</a></li>
+          <li><a href="stories.html">your stories</a></li>
+          <li><a href="site_map.html">site map</a></li>
+          <li class="last"><a href="contact.html">contact</a></li>
+        </ul>
+        <p class="fl_rt">Copyright 2009 Ploverstomp.com</p>
+        <p class="fl_lft">Site By <a href="http://www.weblbdesigns.com/">Web LB</a></p>
+        <div class="clear">
+        </div>
+      </div>
+</div>
+<script>
+// initialize scrollable and return the programming API
+var api = $("#scroll").scrollable({
+	items: '#tools',
+	size: 1,
+	clickable: false
+
+// use the navigator plugin
+}).navigator({api: true});
+
+
+// this callback does the special handling of our "intro page"
+api.onStart(function(e, i) {
+
+	// when on the first item: hide the intro
+	if (i) {
+		$("#intro").fadeOut("slow");
+
+	// otherwise show the intro
+	} else {
+		$("#intro").fadeIn(1000);
+	}
+
+	// toggle activity for the intro thumbnail
+	$("#t0").toggleClass("active", i == 0);
+});
+
+// a dedicated click event for the intro thumbnail
+$("#t0").click(function() {
+
+	// seek to the beginning (the hidden first item)
+	$("#scroll").scrollable().begin();
+
+});
+
+</script>
+</body>
+</html>

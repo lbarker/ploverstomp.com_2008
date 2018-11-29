@@ -1,0 +1,98 @@
+@charset "UTF-8";
+/* CSS Document */
+*{margin:0px; padding:0px}
+body{ background-image:url(../images/css_elements/stone_bkg.gif); background-repeat:repeat; font-family:Century Gothic,Helvetica, Arial, sans-serif}
+p {margin:10px 0px}
+.clear { clear:both}
+.fl_rt {float:right}
+.fl_lft {float:left}
+a {color:#930}
+a:hover{color:#C90; text-decoration:underline}
+#container{ width:1000px; margin-left:auto; margin-right:auto}
+
+/*HEADER*/
+#header {width:1000px; margin-left:auto; margin-rigt:auto; height:150px}
+#logo h1{ text-indent:-9999px; height:200px; width:400px; position:absolute; top:0px; left:0px;background-image:url(../images/css_elements/logo.gif); background-repeat:no-repeat; z-index:1}
+
+/*PRIMARY NAVIGATION*/
+#primary_nav {margin-right:0px;padding:0px; width:600px; height:70px; background-repeat:no-repeat; float:right; z-index:1; margin-top:0px}
+		ul#nav {width: 600px; height:70px; background-image:url(../images/css_elements/primary_nav.gif); background-repeat:no-repeat;}
+		ul#nav li { line-height: 70px; float:left}
+		ul#nav li a { height: 70px; line-height: 70px; text-indent: -9999px; text-decoration: none;float:right  }
+		ul#nav li, ul#nav li a {background-image:url(../images/css_elements/primary_nav.gif); background-repeat: no-repeat; display:inline }
+	
+		
+		ul#nav li.home, ul#nav li.home a { width: 75px; background-position: 0px 0; }
+		ul#nav li.home a.on, ul#nav li.home a:hover, ul#nav li.home_on { width: 75px; background-position: 0px -70px; }
+
+		ul#nav li.mission, ul#nav li.mission a { width:140px; background-position: -75px 0px; }
+		ul#nav li.mission a.on, ul#nav li.mission a:hover, ul#nav li.mission_on  { width:140px; background-position: -75px -70px; }
+
+		
+		ul#nav li.info, ul#nav li.info a { width: 115px; background-position: -215px 0; }
+		ul#nav li.info a.on, ul#nav li.info a:hover, ul#nav li.info_on { width: 115px; background-position: -215px -70px; }
+	
+		ul#nav li.stuff, ul#nav li.stuff a { width:130px; background-position: -330px 0; }
+		ul#nav li.stuff a.on, ul#nav li.stuff a:hover { width: 130px; background-position: -330px -70px; }		
+
+		
+		ul#nav li.stories, ul#nav li.stories a { width:140px; background-position: -460px 0; }
+		ul#nav li.stories a.on, ul#nav li.stories a:hover { width: 140px; background-position: -460px -70px; }
+		
+/*Drop downs
+#drop_down {margin: 0px; padding:0px; width:200px; height:140px; background-repeat:no-repeat; float:right; z-index:2;}
+ul#nav li ul {width: 200px; height:140px; background-image: url(../images/css_elements/drop_down_meune.gif); background-repeat:no-repeat; z-index:2}
+		ul#nav li {loat:right}
+		ul#nav li a { height:140px; line-height: 46px; text-indent: -9999px; text-decoration: none;float:right  }
+		ul#nav li, ul#nav li a {url(../images/css_elements/drop_down_meune.gif); background-repeat: no-repeat;}
+*/
+
+/*SOCIAL MEDIA NAVIGATION*/
+#nav_s { float:right; margin-right:15px; z-index:1; height:70px}
+#nav_s li{display:inline;}
+
+
+/*page peel*/
+#page_peel { width:160px; height:200px;position:absolute; top:0px; right:0px; z-index:-2}
+
+
+/*CONTENT*/
+#content {width:1000px; height:auto; margin-left:auto; margin-right:auto; margin-top:10px}
+#content_middle { background-image:url(../images/css_elements/middle.gif); width:1000px; background-repeat:repeat-y;padding:20px 50px; 
+width:900px; margin-top:-10px}
+
+/*Hs styling*/
+h2 {margin-top:10px;text-indent:-9999px;width:800px; height:50px; margin-left:auto; margin-right;background-repeat:no-repeat}
+#H2_mission {  background-image:url(../images/css_elements/h2_mission_statement.gif); background-repeat:no-repeat; }
+#h2_stickers{ background-image:url(../images/css_elements/h2_stickers.gif); background-repeat:no-repeat}
+#H2_stories {background-image:url(../images/css_elements/h2_stories.gif); background-repeat:no-repeat}
+#h2_contact {background-image:url(../images/css_elements/h2_contact.gif); background-repeat:no-repeat}
+#H2_site_map {background-image:url(../images/css_elements/h2_site_map.gif); background-repeat:no-repeat}
+#h2_info {background-image:url(../images/css_elements/h2_info.gif)}
+#h2_monetary{background-image:url(../images/css_elements/h2_monetary.gif)}
+#h2_politics{background-image:url(../images/css_elements/h2_politics.gif)}
+#h2_recovery{background-image:url(../images/css_elements/h2_recovery.gif)}
+#h2_biological{background-image:url(../images/css_elements/h2_bio.gif)}
+#h2_enviorment { background-image:url(../images/css_elements/h2_environment.gif)}
+.info_list { margin: 10px 10px 10px 20px; list-style:circle}
+.ol_info_list {margin: 10px 10px 10px 20px}
+
+/*FOOTER*/
+#footer { width:1000px; margin-right:auto; margin-right:auto;text-align:right; list-style-type:none; display:inline; line-height:10px; height:100px}
+
+#footer ul {padding-top:10px; margin: -10px 10px 0px 0px}
+#footer ul li {margin:0px; padding: 0 8px 0 4px; border-right: 1px solid #fff; display: inline; font-size:10px}
+#footer ul li.last { border-right:none; padding-right:0px}
+#footer ul li a {color:#CCC; text-decoration:none}
+#footer ul li a:hover {color:#FF0; text-decoration:underline}
+#footer p {font-size:10px; color:#CCC; margin:10px 10px 10px 10px}
+
+/*shopping carts*/
+.shopping { width:900p; height:300px; margin:20px; border-bottom:groove #CCC}
+.shopping_text{ float:left;}
+.shopping_cart { float:right; width:300px; background-color:#FFC; padding:10px}
+.shopping_product_image {float:left}
+
+/*site map*/
+.site_map_list { line-height:20px; margin-left:200px}
+.site_map_sub_list {margin-left:30px}
